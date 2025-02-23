@@ -1,6 +1,4 @@
 import openai
-from typing import Annotated
-from fastapi import Depends
 from decouple import config
 from twilio.rest import Client
 
