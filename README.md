@@ -56,7 +56,7 @@ or
 loclx http 8000
 ```
 
-## Update the webhook URL in your Twilio account to the ngrok or loclx URL.
+## Update the webhook URL in your Twilio account
 
 1. In twillio console, go to Develop tab
 2. Click on Messaging - Try it out - Send a whatsapp message
