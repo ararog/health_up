@@ -8,7 +8,11 @@ database = config('DB_NAME')
 
 app = FastAPI()
 
-app.include_router(messages.router, dependencies=[Depends(get_twilio_client), Depends(get_openai_client)])
+app.include_router(messages.router, 
+                   dependencies=[
+                     Depends(get_twilio_client), 
+                     Depends(get_openai_client)
+                  ])
 
 @app.get("/")
 async def root():
