@@ -1,12 +1,7 @@
-import openai
+import json
 from decouple import config
-from twilio.rest import Client
+from kafka import KafkaProducer
 
-account_sid = config("TWILIO_ACCOUNT_SID")
-auth_token = config("TWILIO_AUTH_TOKEN")
-
-def get_twilio_client():
-  return Client(account_sid, auth_token)
-
-def get_openai_client():
-  return openai.OpenAI(api_key=config("OPENAI_API_KEY"))
+def get_kafka_producer():
+  return KafkaProducer(bootstrap_servers=config("KAFKA_BROKER"), 
+                       value_serializer=lambda m: json.dumps(m).encode('ascii'))

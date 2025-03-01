@@ -419,6 +419,7 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "fastapi", extra = ["standard"] },
+    { name = "kafka-python" },
     { name = "openai" },
     { name = "pydantic-ai" },
     { name = "python-decouple" },
@@ -430,6 +431,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "fastapi", extras = ["standard"], specifier = ">=0.115.8" },
+    { name = "kafka-python", specifier = ">=2.0.5" },
     { name = "openai", specifier = ">=1.64.0" },
     { name = "pydantic-ai", specifier = ">=0.0.24" },
     { name = "python-decouple", specifier = ">=3.8" },
@@ -559,6 +561,15 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/b5/49/e582e50b0c54c1b47e714241c4a4767bf28758bf90212248aea8e1ce8516/jsonpath-python-1.0.6.tar.gz", hash = "sha256:dd5be4a72d8a2995c3f583cf82bf3cd1a9544cfdabf2d22595b67aff07349666", size = 18121 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/16/8a/d63959f4eff03893a00e6e63592e3a9f15b9266ed8e0275ab77f8c7dbc94/jsonpath_python-1.0.6-py3-none-any.whl", hash = "sha256:1e3b78df579f5efc23565293612decee04214609208a2335884b3ee3f786b575", size = 7552 },
+]
+
+[[package]]
+name = "kafka-python"
+version = "2.0.5"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/75/f4/d2c7e99f0928c2a7fab8e3d37335dd7d8b0ad3c2d8da73b04472b8bd4a00/kafka_python-2.0.5.tar.gz", hash = "sha256:49ca4e9318992c716b2eef5b893a80c52c37bfb107a90dd074afca859dcfdd14", size = 281558 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/b1/e2/0b2c006d7ff54fde8bece3a157b7c37fef42aa636c550e3c8769f0f9587d/kafka_python-2.0.5-py2.py3-none-any.whl", hash = "sha256:f2efd895579c105f327097989ca357df539cebc2c5961a85d94b1bb561d34a2c", size = 251260 },
 ]
 
 [[package]]
