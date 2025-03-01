@@ -24,13 +24,8 @@ git clone https://github.com/ararog/health_up.git
 ### Update the .env file:
 
 ```plaintext
-TWILIO_ACCOUNT_SID=
-TWILIO_AUTH_TOKEN=
-TWILIO_NUMBER=
-DB_SERVER=
-DB_NAME=
-OPENAI_API_KEY=
-TO_NUMBER=
+KAFKA_BROKER=
+MEDIAS_PATH=
 ```
 
 ### Server setup:
