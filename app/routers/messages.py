@@ -6,9 +6,6 @@ from kafka import KafkaProducer
 
 from ..dependencies import get_kafka_producer
 
-twilio_number = config('TWILIO_NUMBER')
-whatsapp_number = config("TO_NUMBER")
-
 router = APIRouter(
     prefix="/messages",
     tags=["messages"],
