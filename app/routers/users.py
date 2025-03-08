@@ -1,18 +1,21 @@
 from fastapi import APIRouter
+from app.models import User
+from app.services.users import create_user, update_user, get_users
 
-router = APIRouter()
+router = APIRouter(
+    prefix="/users",
+    tags=["users"],
+    responses={404: {"description": "Not found"}},
+)
 
+@router.get("/", tags=["users"])
+async def handle_get_users():
+    return get_users()
 
-@router.get("/users/", tags=["users"])
-async def read_users():
-    return [{"username": "Rick"}, {"username": "Morty"}]
+@router.post("/", tags=["users"])
+async def handle_create_user(user: User):
+    create_user(user)
 
-
-@router.get("/users/me", tags=["users"])
-async def read_user_me():
-    return {"username": "fakecurrentuser"}
-
-
-@router.get("/users/{username}", tags=["users"])
-async def read_user(username: str):
-    return {"username": username}
+@router.put("/{id}", tags=["users"])
+async def handle_update_user(id: str, user: User):
+    update_user(id, user)
